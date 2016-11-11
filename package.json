@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel open:src lint:watch",
-    "open:src": "babel-node tools/srcServer.js",
+    "start": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
@@ -17,10 +16,13 @@
     "postbuild": "babel-node tools/distServer.js"
   },
   "dependencies": {
+    "axios": "^0.15.2",
     "babel-polyfill": "6.8.0",
+    "babel-preset-stage-2": "^6.18.0",
     "bootstrap": "3.3.6",
     "firebase": "^3.3.0",
     "jquery": "2.2.3",
+    "jsx-control-statements": "^3.1.5",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-geosuggest": "^2.0.0",
@@ -28,7 +30,9 @@
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
+    "redux-saga": "^0.12.1",
     "redux-thunk": "2.0.1",
+    "reduxsauce": "^0.2.0",
     "toastr": "2.1.2"
   },
   "devDependencies": {
